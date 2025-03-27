@@ -16,6 +16,7 @@
   },
   "mixins": [
   ],
+  "accesswidener": "structuredev.accesswidener",
   "depends": {
     "fabricloader": ">=0.14.9",
     "fabric": ">=0.58.0",

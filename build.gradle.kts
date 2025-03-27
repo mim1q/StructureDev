@@ -54,6 +54,10 @@ tasks {
   }
 }
 
+loom {
+  accessWidenerPath.set(file("src/main/resources/structuredev.accesswidener"))
+}
+
 // Publishing
 val secretsFile = rootProject.file("publishing.properties")
 val secrets = Secrets(secretsFile)
