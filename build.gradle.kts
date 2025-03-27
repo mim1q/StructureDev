@@ -6,6 +6,7 @@ plugins {
   id("fabric-loom") version Versions.loom
   id("com.modrinth.minotaur") version Versions.minotaur
   id("com.matthewprenger.cursegradle") version Versions.cursegradle
+  kotlin("jvm") version Versions.kotlin
 }
 
 java {
@@ -23,6 +24,7 @@ version = ModData.version
 
 repositories {
   mavenCentral()
+  maven("https://api.modrinth.com/maven") // Wayland Fix
 }
 
 dependencies {
@@ -30,9 +32,14 @@ dependencies {
   mappings("net.fabricmc:yarn:${Versions.yarn}:v2")
   modImplementation("net.fabricmc:fabric-loader:${Versions.fabricLoader}")
   modImplementation("net.fabricmc.fabric-api:fabric-api:${Versions.fabricApi}")
+
+  modImplementation("net.fabricmc:fabric-language-kotlin:${Versions.fabricLanguageKotlin}")
+  implementation(kotlin("stdlib-jdk8"))
+
+  // Local
+  modLocalRuntime("maven.modrinth:wayland-fix:1.1")
 }
 
-@Suppress("UnstableApiUsage")
 tasks {
   withType<ProcessResources> {
     inputs.property("version", ModData.version)
@@ -105,4 +112,8 @@ if (secrets.isCurseforgeReady()) {
       dependsOn(remapJar)
     }
   }
+}
+
+kotlin {
+  jvmToolchain(17)
 }

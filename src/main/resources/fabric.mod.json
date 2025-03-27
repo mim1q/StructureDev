@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "structuredev",
+  "version": "${version}",
+  "name": "Structure Dev Utils",
+  "description": "Various utilities for structure mod developers",
+  "authors": [
+    "Mim1q"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/structuredev/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [{ "adapter": "kotlin", "value": "dev.mim1q.structuredev.StructureDev" }]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": ">=0.58.0",
+    "minecraft": [
+      "1.20.1"
+    ]
+  }
+}
