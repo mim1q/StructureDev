@@ -15,6 +15,7 @@
     "main": [{ "adapter": "kotlin", "value": "dev.mim1q.structuredev.StructureDev" }]
   },
   "mixins": [
+    "structuredev.mixins.json"
   ],
   "accesswidener": "structuredev.accesswidener",
   "depends": {
