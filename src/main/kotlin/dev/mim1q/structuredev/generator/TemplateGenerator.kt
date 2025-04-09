@@ -7,9 +7,7 @@ import net.minecraft.block.StructureBlock
 import net.minecraft.block.entity.StructureBlockBlockEntity
 import net.minecraft.block.enums.StructureBlockMode
 import net.minecraft.server.world.ServerWorld
-import net.minecraft.structure.StructurePlacementData
 import net.minecraft.util.math.BlockPos
-import net.minecraft.world.ServerWorldAccess
 
 const val X_GAP = 2
 const val Z_GAP = 2
@@ -53,16 +51,12 @@ class TemplateGenerator(
                     it.templateName = key
                     it.offset = BlockPos(1, 1, 1)
                     it.size = value.size
+                    it.place(
+                        world,
+                        true,
+                        value
+                    )
                 }
-
-                value.place(
-                    world as ServerWorldAccess,
-                    pos,
-                    pos,
-                    StructurePlacementData(),
-                    world.random,
-                    63
-                )
 
                 zOffset += value.size.z + Z_GAP
             }

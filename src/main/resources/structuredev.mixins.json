@@ -6,7 +6,9 @@
   "mixins": [
     "ServerPlayerMessageRedirectMixin"
   ],
-  "client": [],
+  "client": [
+    "client.render.StructureBlockBlockEntityRendererMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
