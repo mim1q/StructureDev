@@ -3,6 +3,7 @@ package dev.mim1q.structuredev.command
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.StringArgumentType
 import dev.mim1q.structuredev.generator.TemplateGenerator
+import dev.mim1q.structuredev.util.suggestsSubPaths
 import net.minecraft.server.command.CommandManager.argument
 import net.minecraft.server.command.CommandManager.literal
 import net.minecraft.server.command.ServerCommandSource
@@ -13,6 +14,7 @@ fun CommandDispatcher<ServerCommandSource>.registerGenerateTemplatesCommand() {
         literal("structuredev:generate_templates")
             .then(
                 argument("prefix", StringArgumentType.string())
+                    .suggestsSubPaths { ctx-> ctx.source.server.structureTemplateManager.streamTemplates() }
                     .executes { ctx ->
                         val prefix = StringArgumentType.getString(ctx, "prefix")
                         TemplateGenerator(

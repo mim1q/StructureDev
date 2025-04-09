@@ -1,6 +1,7 @@
 package dev.mim1q.structuredev
 
 import dev.mim1q.structuredev.command.registerGenerateTemplatesCommand
+import dev.mim1q.structuredev.command.registerGiveChestsCommand
 import dev.mim1q.structuredev.item.StructureDevItems
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
@@ -18,6 +19,7 @@ object StructureDev : ModInitializer {
 
         CommandRegistrationCallback.EVENT.register(CommandRegistrationCallback { dispatcher, _, _ ->
             dispatcher.registerGenerateTemplatesCommand()
+            dispatcher.registerGiveChestsCommand()
         })
     }
 
