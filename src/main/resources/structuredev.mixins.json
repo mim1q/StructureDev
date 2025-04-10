@@ -1,13 +1,13 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.mim1q.mixin",
+  "package": "dev.mim1q.structuredev.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ServerPlayerMessageRedirectMixin"
+    "render.ServerPlayerMessageRedirectMixin"
   ],
   "client": [
-    "client.render.StructureBlockBlockEntityRendererMixin"
+    "render.StructureBlockBlockEntityRendererMixin"
   ],
   "server": [],
   "injectors": {

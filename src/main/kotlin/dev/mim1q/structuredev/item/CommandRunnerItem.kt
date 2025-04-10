@@ -1,6 +1,6 @@
 package dev.mim1q.structuredev.item
 
-import dev.mim1q.access.ServerPlayerMessageRedirectAccess
+import dev.mim1q.structuredev.access.ServerPlayerMessageRedirectAccess
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack

@@ -1,4 +1,4 @@
-package dev.mim1q.access;
+package dev.mim1q.structuredev.access;
 
 import net.minecraft.server.command.CommandOutput;
 import org.jetbrains.annotations.Nullable;

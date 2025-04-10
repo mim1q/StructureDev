@@ -1,4 +1,4 @@
-package dev.mim1q.mixin.client.render;
+package dev.mim1q.structuredev.mixin.render;
 
 import dev.mim1q.structuredev.mixindelegates.client.StructureBlockBlockEntityRendererMixinDelegate;
 import net.minecraft.block.entity.StructureBlockBlockEntity;
