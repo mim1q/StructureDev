@@ -1,4 +1,4 @@
-package dev.mim1q.structuredev.mixin.render;
+package dev.mim1q.structuredev.mixin;
 
 import dev.mim1q.structuredev.access.ServerPlayerMessageRedirectAccess;
 import net.minecraft.server.command.CommandOutput;
