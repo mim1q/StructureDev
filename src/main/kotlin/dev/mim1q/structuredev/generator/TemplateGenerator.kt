@@ -49,6 +49,15 @@ class TemplateGenerator(
                     structureBlockPos,
                     Blocks.STRUCTURE_BLOCK.defaultState.with(StructureBlock.MODE, StructureBlockMode.SAVE)
                 )
+
+
+                BlockPos.iterate(
+                    pos,
+                    pos.add(value.size.x - 1, value.size.y - 1, value.size.z - 1)
+                ).forEach {
+                    world.setBlockState(it, Blocks.STRUCTURE_VOID.defaultState)
+                }
+
                 (world.getBlockEntity(structureBlockPos) as? StructureBlockBlockEntity)?.let {
                     it.templateName = key
                     it.offset = BlockPos(1, 1, 1)
@@ -59,13 +68,6 @@ class TemplateGenerator(
                         true,
                         value
                     )
-                }
-
-                BlockPos.iterate(
-                    pos,
-                    pos.add(value.size.x - 1, value.size.y - 1, value.size.z - 1)
-                ).forEach {
-                    world.setBlockState(it, Blocks.STRUCTURE_VOID.defaultState)
                 }
 
                 zOffset += value.size.z + Z_GAP
